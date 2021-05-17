@@ -1,0 +1,91 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 100%;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  background: #fff;
+  // box-shadow: 5px 5px 50px #ccc;
+  overflow: scroll;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in;
+  opacity: 0;
+  h2 {
+    padding: 2rem;
+    border-bottom: 2px #ccc dotted;
+  }
+}
+
+.library-song {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  img {
+    width: 30%;
+    border-radius: 2px;
+  }
+  &:hover {
+    background: #2c3a47;
+  }
+}
+
+.song-description {
+  padding-left: 1rem;
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.7rem;
+  }
+}
+
+.selected {
+  background: #1f2933;
+}
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+    transition: all 0.3s ease;
+    background: #3e4c59;
+    h2 {
+      color: #f5f7fa;
+    }
+  }
+  .library-song {
+    border-bottom: 2px #f5f7fa dotted;
+    h4,
+    h5 {
+      color: #f5f7fa;
+    }
+    &:hover {
+      background: #1f2933;
+    }
+    .selected {
+      background: #1f2933;
+    }
+  }
+}
